@@ -47,7 +47,13 @@
 - [Segment Anything (SAM)](https://github.com/facebookresearch/segment-anything)
 
 ## 6. 系統架構圖
-
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
 ```mermaid
 graph TD;
     A[main_pipeline.py] -->|載入設定| B[config.py]
