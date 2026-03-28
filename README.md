@@ -6,6 +6,7 @@
 
 ## 1. 專案介紹
 本專案為一套自動化影像分析與物件偵測/分割系統，專注於 COCO 資料集動物（特別是貓）之偵測、分割、眼睛定位與評估。整合 GroundingDINO、SAM、COCO API 等多種工具，並提供完整的可視化、評分與 debug 輸出。
+demo 影片:https://youtu.be/RNwFvwtW1nw
 
 ## 2. 技術棧說明
 - Python 3.10
