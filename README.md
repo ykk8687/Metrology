@@ -8,7 +8,7 @@
 本專案為一套自動化影像分析與物件偵測/分割系統，專注於 COCO 資料集動物（特別是貓）之偵測、分割、眼睛定位與評估。整合 GroundingDINO、SAM、COCO API 等多種工具，並提供完整的可視化、評分與 debug 輸出。
 
 ## 2. 技術棧說明
-- Python 3.8+
+- Python 3.10
 - OpenCV
 - NumPy
 - pycocotools
@@ -18,7 +18,7 @@
 - Docker (可選)
 
 ## 3. 本地運行步驟
-1. 安裝 Python 3.8 以上版本。
+1. 安裝 Python 3.10 版本。
 2. 安裝依賴：
    ```bash
    pip install -r requirements.txt
@@ -49,7 +49,7 @@
 
 ## 6. 系統架構圖
 
-```mermaid
+```
 graph TD
     A[main_pipeline.py] -->|載入設定| B[config.py]
     A -->|COCO選圖| C[CocoImageSelector]
