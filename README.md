@@ -56,16 +56,15 @@ graph TD;
 ```
 ```mermaid
 graph TD;
-    A["main_pipeline.py"] -->|載入設定| B["config.py"];
+    B["config.py"] -->|載入設定| A["main_pipeline.py"];
     A -->|COCO選圖| C["CocoImageSelector"];
-    A -->|物件偵測| D["GroundDetector (GroundingDINO)"];
-    A -->|分割| E["GenericSegmenter (SAM)"];
-    A -->|眼睛偵測| F["EyeDetector"];
-    A -->|評估| G["measure.py (dice_score, boundary_iou)"];
-    A -->|可視化| H["ImageProcessor"];
-    C -->|下載/過濾| I["filtered_annotations.json"];
-    D & E & F -->|推論| J["weights/"];
-    H -->|輸出| K["results_images/"];
+    C -->|下載/過濾| H["filtered_annotations.json"];
+    H -->|物件偵測| D["GroundDetector (GroundingDINO)"];
+    D -->|分割| E["GenericSegmenter (SAM)"];
+    I["weights/"] -->|評估| F["measure.py (dice_score, boundary_iou)"];
+    I -->|可視化| G["ImageProcessor"];
+    D & E -->|推論| I;
+    G -->|輸出| J["results_images/"];
 ```
 
 ## 7. 使用了哪些AI模型?
