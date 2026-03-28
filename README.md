@@ -40,7 +40,6 @@
    ```bash
    docker run --gpus all -it metrology-pipeline bash
    ```
-   docker-compose up --build
 
 ## 5. API 文件連結
 - [COCO API 官方文件](https://cocodataset.org/#home)
