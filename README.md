@@ -49,13 +49,6 @@
 ## 6. 系統架構圖
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-```mermaid
-graph TD;
     A["main_pipeline.py"] -->|COCO選圖| C["CocoImageSelector"];
     B["config.py"] -->|載入設定| A;
     C -->|下載/過濾| H["filtered_annotations.json"];
