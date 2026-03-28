@@ -61,8 +61,10 @@ graph TD;
     C -->|下載/過濾| H["filtered_annotations.json"];
     H -->|物件偵測| D["GroundDetector (GroundingDINO)"];
     D -->|分割| E["GenericSegmenter (SAM)"];
-    I["weights/"] -->|評估| F["measure.py (dice_score, boundary_iou)"];
-    I -->|可視化| G["ImageProcessor"];
+    E -->|評估| F["measure.py (dice_score, boundary_iou)"];
+    I["weights/"] --> D
+    I["weights/"] --> E
+    E -->|可視化| G["ImageProcessor"];
     D & E -->|推論| I;
     G -->|輸出| J["results_images/"];
 ```
