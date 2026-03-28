@@ -48,8 +48,8 @@
 
 ## 6. 系統架構圖
 
-```
-graph TD
+```mermaid
+graph TD;
     A[main_pipeline.py] -->|載入設定| B[config.py]
     A -->|COCO選圖| C[CocoImageSelector]
     A -->|物件偵測| D[GroundDetector (GroundingDINO)]
