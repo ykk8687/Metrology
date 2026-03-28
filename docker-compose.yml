@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  metrology:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: metrology-pipeline
+    container_name: metrology-pipeline
+    
+    # GPU support
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - NVIDIA_DRIVER_CAPABILITIES=compute,utility
+    
+    # Volume mounts for models and outputs
+    volumes:
+      - ./weights:/app/weights
+      - ./results_images:/app/results_images
+    
+    # Working directory
+    working_dir: /app
+    
+    # Run command (override if needed)
+    # command: python main_pipeline.py
+    
+    # Restart policy
+    restart: unless-stopped
