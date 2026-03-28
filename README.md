@@ -63,9 +63,8 @@ graph TD;
     D -->|分割| E["GenericSegmenter (SAM)"];
     E -->|評估| F["measure.py (dice_score, boundary_iou)"];
     I["weights/"] --> D
-    I["weights/"] --> E
+    I --> E
     E -->|可視化| G["ImageProcessor"];
-    D & E -->|推論| I;
     G -->|輸出| J["results_images/"];
 ```
 
